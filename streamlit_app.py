@@ -1,17 +1,20 @@
 import streamlit as st
+from functions import get_guessed_age
 
-# Title of the app
 st.title("Welcome to My Streamlit App")
 
-# Sidebar
 st.sidebar.header("Navigation")
 st.sidebar.text("Use the sidebar to navigate")
 
-# Main content
-st.header("Main Content")
-st.write("This is a basic Streamlit app setup. Add your content here!")
 
-# Input example
-user_input = st.text_input("Enter some text:")
+st.header("Age Detector")
+st.write("Come and find out your true mental age based on your name!")
+
+
+user_input = st.text_input("Enter a name to guess the age:")
 if user_input:
-    st.write(f"You entered: {user_input}")
+    guessed_age = get_guessed_age(user_input)
+    if guessed_age is not None:
+        st.write(f"The guessed age for the name '{user_input}' is: {guessed_age}")
+    else:
+        st.write("Failed to fetch data from the API. Please try again later.")
