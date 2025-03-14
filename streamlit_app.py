@@ -1,6 +1,18 @@
 import streamlit as st
 from functions import get_guessed_age
 
+
+
+st.set_page_config(
+   page_title="Mental-ly",
+   page_icon="💀",
+   layout="wide",
+   initial_sidebar_state="expanded",
+)
+
+
+
+
 st.title("Welcome to My Streamlit App")
 
 st.sidebar.header("Navigation")
