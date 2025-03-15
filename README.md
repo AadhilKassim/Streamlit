@@ -10,3 +10,9 @@ Welcome to **Mental-ly**, a fun and interactive Streamlit app that guesses your 
 ## 📖 About
 This app is built using **Streamlit** and leverages the **Agify API** to provide age predictions. It's hosted on the Streamlit Community Cloud and is designed to be both fun and engaging. Stay tuned for more exciting features! 🚀
 
+## 📬 Contact
+For inquiries or feedback, feel free to reach out:
+- **Email**: [aadhikassim@gmail.com](mailto:aadhikassim@gmail.com)
+- **Portfolio**: [aadhilkassim.github.io](https://aadhilkassim.github.io)
+- **GitHub**: [AadhilKassim](https://www.github.com/AadhilKassim)
+
