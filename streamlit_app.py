@@ -33,7 +33,10 @@ if st.session_state.page == "Home":
         guessed_age = get_guessed_age(user_input)
         if guessed_age is not None:
                         st.markdown(f"<h1 style='text-align: center; color: Blue;'>{guessed_age}</h1>", unsafe_allow_html=True)
-                        st.balloons()
+                        if guessed_age > 60:
+                            st.error("You are too old! Go and take a nap.")
+                        else:
+                             st.balloons()
         else:
             st.write("Failed to fetch data from the API. Please try again later.")
 
