@@ -5,7 +5,7 @@ st.set_page_config(
    page_title="Mental-ly",
    page_icon="💀",
    layout="wide",
-   initial_sidebar_state="expanded",
+   initial_sidebar_state="collapsed",
 )
 
 st.title("Welcome to My Streamlit App", anchor=None)
@@ -34,7 +34,10 @@ if st.session_state.page == "Home":
         if guessed_age is not None:
                         st.markdown(f"<h1 style='text-align: center; color: Blue;'>{guessed_age}</h1>", unsafe_allow_html=True)
                         if guessed_age > 60:
-                            st.error("You are too old! Go and take a nap.")
+                            st.error("You are too old! Go and take a nap. You need it.")
+                        elif guessed_age < 20:
+                            st.success("You are too young! Go and play some games.")
+                            st.balloons()
                         else:
                              st.balloons()
         else:
