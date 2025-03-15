@@ -39,8 +39,8 @@ if st.session_state.page == "Home":
 
 elif st.session_state.page == "About":
     st.header("About")
-    st.write("This app uses the Agify API to guess the age based on a name.")
+    st.write("This app uses the Agify API to guess the age based on a name. The app is built using Streamlit and hosted on Streamlit community cloud. You can find the source code on GitHub.\n\nI'll be adding more features to this app soon. Stay tuned!")
 
 elif st.session_state.page == "Contact":
     st.header("Contact")
-    st.write("For inquiries, please contact us at: example@example.com")
+    st.write("For inquiries, please contact: aadhikassim@gmail.com\n\nPortfolio: https://aadhilkassim.github.io\n\nMore jokes and fun stuff coming soon! Find me at: [GitHub](https://www.github.com/AadhilKassim)")
