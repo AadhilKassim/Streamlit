@@ -8,7 +8,7 @@ st.set_page_config(
    initial_sidebar_state="expanded",
 )
 
-st.title("Welcome to My Streamlit App")
+st.title("Welcome to My Streamlit App", anchor=None)
 
 # Sidebar navigation using buttons
 st.sidebar.header("Navigation")
