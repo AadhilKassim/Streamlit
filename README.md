@@ -16,3 +16,8 @@ For inquiries or feedback, feel free to reach out:
 - **Portfolio**: [aadhilkassim.github.io](https://aadhilkassim.github.io)
 - **GitHub**: [AadhilKassim](https://www.github.com/AadhilKassim)
 
+## 🔮 Future Features
+- 🌟 Add more APIs for enhanced predictions.
+- 📊 Include data visualization for name trends.
+- 🎭 Introduce personality quizzes for more fun insights.
+- 🌐 Multilingual support for a global audience.
