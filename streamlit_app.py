@@ -60,7 +60,7 @@ if st.session_state.page == "Home":
         )
         st.caption("Additional options coming soon!")
 
-        X
+        get_joke(joke_category)
 
 elif st.session_state.page == "About":
     st.header("About")
