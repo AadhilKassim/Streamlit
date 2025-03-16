@@ -42,20 +42,26 @@ if st.session_state.page == "Home":
             else:
                 st.balloons()
 
-            # Additional section to know more about the person
-            st.subheader("Tell us more about yourself:")
-            is_single = st.checkbox("Are you single?")
-            joke_category = st.selectbox(
-                "What type of joke would you like?",
-                ["Programming", "Misc", "Dark", "Pun", "Spooky", "Christmas"]
-            )
-            st.caption("Additional options coming soon!")
+            # Show additional section to know more about the person
+            st.session_state.show_joke_section = True
 
-            if is_single:
-                st.write("*I'm single too! Let's mingle.*")
+        else:
+            st.write("Failed to fetch data from the API. Please try again later.")
 
+    if st.session_state.show_joke_section:
+        st.subheader("Tell us more about yourself:")
+        is_single = st.checkbox("Are you single?")
+        if is_single:
+            st.write("*I'm single too! Let's mingle.*")
+        joke_category = st.selectbox(
+            "What type of joke would you like?",
+            [" ", "Programming", "Misc", "Dark", "Pun", "Spooky", "Christmas"],
+            format_func=lambda x: "Select a category" if x == " " else x
+        )
+        st.caption("Additional options coming soon!")
 
-            # Fetch and display a joke based on the selected category
+        # Fetch and display a joke based on the selected category
+        if joke_category != " ":
             st.subheader("Here's a joke to brighten your day:")
             try:
                 response = requests.get(f"https://sv443.net/jokeapi/v2/joke/{joke_category}")
@@ -69,8 +75,6 @@ if st.session_state.page == "Home":
                     st.warning("Couldn't fetch a joke at the moment. Please try again later.")
             except Exception as e:
                 st.error(f"An error occurred while fetching a joke: {e}")
-        else:
-            st.write("Failed to fetch data from the API. Please try again later.")
 
 elif st.session_state.page == "About":
     st.header("About")
