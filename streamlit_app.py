@@ -20,13 +20,15 @@ if st.sidebar.button("About"):
 if st.sidebar.button("Contact"):
     st.session_state.page = "Contact"
 
-# Initialize session state for page, show_joke_section, and last_processed_name if not already set
+# Initialize session state for page, show_joke_section, last_processed_name, and last_guessed_age if not already set
 if "page" not in st.session_state:
     st.session_state.page = "Home"
 if "show_joke_section" not in st.session_state:
     st.session_state.show_joke_section = False
 if "last_processed_name" not in st.session_state:
     st.session_state.last_processed_name = ""
+if "last_guessed_age" not in st.session_state:
+    st.session_state.last_guessed_age = None
 
 # Page content
 if st.session_state.page == "Home":
@@ -37,6 +39,7 @@ if st.session_state.page == "Home":
     if user_input and user_input != st.session_state.last_processed_name:
         guessed_age = get_guessed_age(user_input)
         if guessed_age is not None:
+            st.session_state.last_guessed_age = guessed_age
             st.markdown(f"<h1 style='text-align: center; color: Blue;'>{guessed_age}</h1>", unsafe_allow_html=True)
             if guessed_age > 60:
                 st.error("You are too old! Go and take a nap. You need it.")
@@ -49,6 +52,8 @@ if st.session_state.page == "Home":
         else:
             st.write("Failed to fetch data from the API. Please try again later.")
         st.session_state.last_processed_name = user_input
+    elif st.session_state.last_guessed_age is not None:
+        st.markdown(f"<h1 style='text-align: center; color: Blue;'>{st.session_state.last_guessed_age}</h1>", unsafe_allow_html=True)
 
     if st.session_state.show_joke_section:
         st.subheader("Tell us more about yourself:")
