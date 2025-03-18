@@ -26,3 +26,6 @@ For inquiries or feedback, feel free to reach out:
 - 📊 Include data visualization for name trends.
 - 🎭 Introduce personality quizzes for more fun insights.
 - 🌐 Multilingual support for a global audience.
+
+### Try it out
+- [mental-ly](https://mental-ly.streamlit.app/)
