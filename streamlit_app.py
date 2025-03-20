@@ -65,13 +65,13 @@ if st.session_state.page == "Home":
             [" ", "Programming", "Misc", "Dark", "Pun", "Spooky", "Christmas"],
             format_func=lambda x: "Select a category" if x == " " else x
         )
-        st.caption("Additional options coming soon!")
+        add_option = st.caption("Additional options coming soon!")
 
         get_joke(joke_category)
 
 elif st.session_state.page == "About":
     st.header("About")
-    st.write("This app uses the Agify API to guess the age based on a name. The app is built using Streamlit and hosted on Streamlit community cloud. You can find the source code on GitHub.\n\nI'll be adding more features to this app soon. Stay tuned!")
+    st.write("This app uses the Agify API to guess the age based on a name and Jokes API to get you a specialised joke better suited to your mood. Select from the curated list of jokes that surely to put a smile on your face. The app is built using Streamlit and hosted on Streamlit community cloud. You can find the source code on GitHub.\n\nI'll be adding more features to this app soon. Stay tuned!")
 
 elif st.session_state.page == "Contact":
     st.header("Contact")
